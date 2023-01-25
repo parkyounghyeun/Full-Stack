@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #heading {
+        color: #ff0;
+        background-color: #f00;
+      }
+      .welcome {
+        color: #f00;
+        background-color: #ff0;
+      }
+    </style>
+  </head>
+  <body>
+    <
+    <h1 id="heading">hello world</h1>
+    <h2 class="welcome">안녕하세요</h2>
+    <!-- body> h2.welcome-->
+    <script>
+      //DOM - Document object model
+      //dom 가져오기
+      //let,var를 자주 씀 단어 두개를 붙여쓰면 스네이크 케이스 두번째 단어 첫글자 대문자 표기
+      let h1Tag = document.getElementById("heading"); //id속성
+      console.log(h1Tag);
+      console.dir(h1Tag);
+      alert("Hello JavaScript ..! ");
+    </script>
+  </body>
+</html>
