@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #box {
+        width: 400px;
+        height: 400px;
+        border: 1px solid gray;
+        background-image: url("./img/풍경.jpeg");
+        background-size: 400px 700px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        overflow: scroll;
+        background-attachment: scroll;
+      }
+      /* background-repeat: no-repeat -> 반복안한다 size가 많아도 */
+      /* overflow: scroll-> scroll 생성 */
+      /* background-position: center center-> 이미지를 가운데로  */
+      /* background-attachment: scroll-> 스크롤 내리면 배경이미지와 분리 */
+    </style>
+  </head>
+  <body>
+    <div id="box"></div>
+  </body>
+</html>

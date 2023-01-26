@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #box {
+        width: 100px;
+        height: 100px;
+        background-color: yellow;
+        border: 2px solid red;
+        /* left는 요소가 레이어여야 적용된다. position */
+        position: absolute;
+        left: 0px;
+        transition: all 0.5s cubic-bezier(0.52, 0.26, 0.72, 1.18);
+      }
+      #btnGroup {
+        width: 250px;
+      }
+      #btnGroup button {
+        width: 80px;
+        height: 60px;
+        margin: 0px 0px 5px 0px; /*상 우 하 좌 -> 시계방향의 마진 설정*/
+        /*pc에서 좌표는 좌측 상단이(0,0)으로 되어있다.*/
+      }
+      button[data-pos-x="200"][data-pos-y="200"] {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="btnGroup">
+      <button data-pos-x="0" data-pos-y="0" class="playBtn">좌상</button>
+      <button data-pos-x="200" data-pos-y="0" class="playBtn">우상</button>
+      <button data-pos-x="0" data-pos-y="200" class="playBtn">우하</button>
+      <button data-pos-x="200" data-pos-y="200" class="playBtn">좌하</button>
+    </div>
+    <div id="box">Box</div>
+
+    <script>
+      //과제는 버튼이 움직이는거 만들기
+      var colors = ["blue", "orange", "brown", "pink"];
+      var playBtnArray = document.getElementsByClassName("playBtn");
+      var box = document.getElementById("box");
+      console.log(playBtnArray);
+      /*playBtnArray[0].x = 0;
+      playBtnArray[0].y = 0;
+      playBtnArray[1].x = 200;
+      playBtnArray[1].y = 0;
+      playBtnArray[2].x = 0;
+      playBtnArray[2].y = 200;
+      playBtnArray[3].x = 200;
+      playBtnArray[3].y = 200;*/
+      ////playbtn들을 class로 지정해서 여러개를 불러오고 그 배열에 맞는 곳에 위치를 지정해주는 방식
+
+      /* var posArr = [
+        { x: 0, y: 0 },
+        { x: 200, y: 0 },
+        { x: 0, y: 200 },
+        { x: 200, y: 200 },
+      ];*/
+
+      for (var cnt = 0; cnt < playBtnArray.length; cnt++) {
+        playBtnArray[cnt].color = colors[cnt];
+        playBtnArray[cnt].onclick = function (event) {
+          box.style.left = this.dataset.posX + "px"; //this는 여기 문장에 있는 이벤트 그것
+          box.style.top = this.dataset.posY + "px";
+          document.body.style.backgroundColor = this.color;
+        };
+      }
+      /* 자바 스크립트 코드는 되도록이면 짧게 간단하게 작성하는 것이 좋음 
+      위에서는 data set을 미리 설정해서 작성하는 것 */
+    </script>
+  </body>
+</html>

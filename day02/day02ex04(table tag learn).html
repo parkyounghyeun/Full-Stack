@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>테이블 태그</h1>
+    <!-- table>tr*3>td*4 -->
+    <!-- border는 테두리를 의미 -->
+    <!-- table align center하면 테이블이 정렬 됨-->
+    <!-- tr에 하게되면 모든 tr이 적용 됨 -->
+    <!-- td 동일 -->
+    <!-- cellpadding 모든 간격을 픽셀 값 만큼 넣어줌 -->
+    <!-- cellspacing 셀과 셀 사이 간격이 벌어진다. -->
+    <table
+      bgcolor="gray"
+      border="0"
+      width="400"
+      height="300"
+      cellpadding="0"
+      cellspacing="1"
+    >
+      <tr align="center" bgcolor="white">
+        <td>11</td>
+        <td colspan="2">12</td>
+        <td>13</td>
+      </tr>
+      <tr align="center" bgcolor="white">
+        <td colspan="3">21</td>
+        <td rowspan="2">24</td>
+      </tr>
+      <tr align="center" bgcolor="white">
+        <td>31</td>
+        <td>32</td>
+        <td>33</td>
+      </tr>
+      <!-- rowspan="n" 행과 행끼리 n갯수 만큼 차지해라-->
+      <!--colspan="n" 열과 열끼리 n갯수 만큼 차지해라 -->
+    </table>
+  </body>
+</html>

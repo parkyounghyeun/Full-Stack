@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+  </head>
+  <body>
+    <!-- form>table>tr*3>th+td>input -> 아래내용 -->
+    <!-- action 안에 url 주소로 데이터가 전송 됌-->
+    <!-- method 헤더 바디에 숨겨진다-->
+    <!-- method 초기값은 get-->
+    <!--fieldset으로 테두리 만들 수 있음-->
+    <fieldset>
+      <legend>Login</legend>
+      <form action="https://www.naver.com" method="post">
+        <table>
+          <tr>
+            <th>아이디</th>
+            <td><input type="text" name="id" value="pak" /></td>
+          </tr>
+          <tr>
+            <th>비밀번호</th>
+            <td><input type="password" name="passwd" /></td>
+          </tr>
+          <tr>
+            <th></th>
+            <td><input type="submit" value="login" /></td>
+          </tr>
+        </table>
+      </form>
+    </fieldset>
+  </body>
+</html>

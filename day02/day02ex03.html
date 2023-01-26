@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* > -> 직계노드만 하라는 의미 */
+      /* li는 리스트,ul은 동그라미 같은 순서 없는 리스트 */
+      /* display inline-block 은 크기를 유지하고 정렬 */
+      /* 매번 높이를 바꿀 수 없기 때문에 overflow:hideen */
+      /* float 뛰우다 */
+      /*box-sizing: border-box; */
+      #nav > ul {
+        border: 1px solid black;
+        padding: 0;
+        /* height: 50px; */
+        overflow: hidden;
+        list-style: none;
+        width: 1000px;
+      }
+      #nav li {
+        list-style: none;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+        border-bottom: 1px solid black;
+        border: 1px solid black;
+        text-align: center; /*글자를 가운데 정렬*/
+        line-height: 40px; /*글 행의 높이를 지정 */
+        width: 200px;
+        height: 50px;
+        /* display: inline-block; */
+        display: block;
+        float: left;
+        box-sizing: border-box;
+      }
+      #nav li:hover {
+        /*::가상 선택자 */
+        background-color: pink;
+        border-bottom: 2px solid red;
+      }
+      h1 {
+        text-align: center;
+        width: 1000px;
+      }
+      div#page {
+        width: 1000px;
+        /* 좌,우가 모드 auto이면 가운데 정렬 한다. */
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="page">
+      <div id="head">
+        <h1>박영현 홈페이지</h1>
+        <div id="nav">
+          <ul>
+            <li>home</li>
+            <li>profile</li>
+            <li>gallery</li>
+            <li>lecture</li>
+            <li>board</li>
+          </ul>
+        </div>
+      </div>
+      <div id="content">
+        <h2>환영합니다.</h2>
+      </div>
+    </div>
+  </body>
+</html>
