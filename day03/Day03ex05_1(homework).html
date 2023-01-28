@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    li>span {
+        display: inline-block;
+        width: 200px;
+        height: 40px;
+    }
+</style>
+</head>
+<body>
+    <!-- 주말 과제 : HTML,CSS,JS를 이용해서 ToDo-List 구현-->
+    <div class="container">
+        <h1>할 일 목록</h1>
+        <p>
+            할 일 <input type ="text" id="newWork">
+            <button id="addBtn">추가</button>
+        </p>
+        <ul>
+            <li>
+                <input type="checkbox">
+                <span>| 주말 과제 하기 |</span>
+                <button>삭제</button>
+            </li>
+            <li>
+                <input type="checkbox" checked>
+                | <del>노마드 강의 듣기</del> |  <!--del-> 취소선--> 
+                <button>삭제</button>
+            </li>
+            <li>
+                <input type="checkbox">
+                | 복습 하기 |
+                <button>삭제</button>
+            </li>
+            <li>
+                <input type="checkbox">
+                | 청소 하기 |
+                <button>삭제</button>
+            </li>
+        </ul>
+        </div>
+    </div>
+</body>
+</html>

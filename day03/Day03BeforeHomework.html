@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>초등학교 저학년용 계산기</h1>
+    <p>결과는 음수가 나오지 않도록</p>
+    <!-- <select id="oper">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+    </select> -->
+
+    <input type="text" id="num1" value="5" size="3" />
+    <input type="text" id="oper" value="+" size="3" />
+    <input type="text" id="num2" value="10" size="3" />
+    <input type="button" id="resultBtn" value="확인" />
+    <div id="result">결과 :</div>
+
+    <script>
+      var num1 = document.querySelector("#num1");
+      var num2 = document.querySelector("#num2");
+      var oper = document.querySelector("#oper");
+      var resultBtn = document.querySelector("#resultBtn");
+      var result = document.querySelector("#result");
+      resultBtn.onclick = function (event) {
+        // parseInt(num1)->문자열 데이터를 정수 데이터로 변환 여기에 num1은 DOM
+        // parseInt 특징 앞에 정수가 나오고 뒤에 문자가 오면 문자를 버려버리고 인식,But 앞에 문자가 먼저 오면 type자체를 인식 못함
+        // console.log로-> 검사하는 습관도 중요함.
+        // typeof : 데이터의 타입을 확인 가능
+        // let a = parseInt(num1.value);
+        // console.log(typeof a);
+        // console.log(isNaN(num1.value)); -> ()안에 있는 것이 NaN이냐?
+        // console.log(isNaN(num1.value));
+        // focus() => 선택요소에 포커스(마우스 클릭 효과)를 줘라 . -> 여기 구문에서는 커서가 num1으로 입력 됨.
+        // 프로토타입은 부모에서 상속받은 애들이다. 라는 뜻
+        // indexOf를 통해 문자의 위치를 알 수 있다.
+        // Math.abs는 절대값으로 바꾸라는 의미
+        // eval -> 문자열을 정수로 연산해라
+        // 첫번째 값의 유효성 검사 코드
+        if (num1.value == "" || !num1.value) {
+          //num1.value == null || num1.value == undefined
+          alert("빈칸입니다. 첫번째 값을 입력하세요.");
+          num1.value = ""; //아닌 값이기 때문에 비워줌
+          num1.focus();
+          return;
+        }
+
+        if (isNaN(parseInt(num1.value))) {
+          alert("첫번째 값이 숫자가 아닙니다! 다시 입력하세요. ");
+          num1.value = "";
+          num1.focus();
+          return;
+        }
+        //연산자 유효성 검사 코드
+        if ("+-*/".indexOf(oper.value) == -1) {
+          alert("연산자는  + - * / 중에 입력하세요.");
+          oper.value = "";
+          oper.focus();
+          return;
+        }
+
+        //두번째 값의 유효성 검사 코드
+        if (num2.value == "" || !num2.value) {
+          //num2.value == null || num2.value == undefined
+          alert("빈칸입니다. 두 번째 값을 입력하세요.");
+          num2.value = ""; //아닌 값이기 때문에 비워줌
+          num2.focus();
+          return;
+        }
+
+        if (isNaN(parseInt(num2.value))) {
+          alert("두번째 값이 숫자가 아닙니다! 다시 입력하세요. ");
+          num2.value = "";
+          num2.focus();
+          return;
+        }
+        // console.log("num 1의 값 : " + num1.value);
+        // console.log("num 2의 값 : " + num2.value);
+        var num1Val = Number(num1.value);
+        var num2Val = Number(num2.value);
+        console.log(num1.value + oper.value + num2.value);
+        var resultValue = Math.abs(eval(num1.value + oper.value + num2.value));
+        /* if (oper.value === "+") {
+          resultValue = num1Val + num2Val;
+        } else if (oper.value === "-") {
+          resultValue = Math.abs(num1Val - num2Val);
+        } else if (oper.value === "*") {
+          resultValue = num1Val * num2Val;
+        } else if (oper.value === "/") {
+          resultValue = num1Val / num2Val;
+        } */
+        console.log("result value : ", resultValue);
+        result.innerText = "결과 : " + resultValue;
+      };
+    </script>
+  </body>
+</html>
