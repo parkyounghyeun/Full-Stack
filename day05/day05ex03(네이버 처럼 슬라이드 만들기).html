@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #lists {
+        border: 1px solid black;
+        padding: 0;
+        width: 1000px;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      #lists > li {
+        border: 1px solid red;
+        display: inline-block;
+        list-style: none;
+        width: 80px;
+        text-align: center;
+        box-sizing: border-box;
+      }
+      #slider {
+        width: 500px;
+      }
+      #slider > button,
+      #slider > div#box {
+        float: left;
+        position: absolute;
+      }
+      #slider > button {
+        width: 40px;
+      }
+      #slider > div#box {
+        position: absolute;
+        left: 50px;
+      }
+      #slider > button#rightBtn {
+        position: absolute;
+        left: 500px;
+      }
+      #box {
+        border: 1px solid blue;
+        overflow: hidden;
+        width: 440px;
+        box-sizing: border-box;
+      }
+      #slider #lists {
+        position: relative;
+        transition: left 0.5s;
+        /* 중요 !!! -> transitoin값은 초기 값이 있어야한다 */
+        left: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>영현이의 코딩 교실</h1>
+    <hr />
+    <div id="slider">
+      <button id="leftBtn">left</button>
+      <button id="rightBtn">right</button>
+      <div id="box"><ul id="lists"></ul></div>
+    </div>
+
+    <script>
+      var itmeNames = [
+        "item1",
+        "item2",
+        "item3",
+        "item4",
+        "item5",
+        "item6",
+        "item7",
+        "item8",
+        "item9",
+        "item10",
+        "item11",
+        "item12",
+      ];
+      var slider = document.getElementById("slider");
+      var lists = document.getElementById("lists");
+      var leftBtn = document.getElementById("leftBtn");
+      var rightBtn = document.getElementById("rightBtn");
+      itmeNames.forEach(function (item, index, arr) {
+        //call back함수
+        var newLi = document.createElement("li");
+        newLi.innerHTML = itmeNames[index]; //index있는 걸 불러와서 html에 표시
+        newLi.className = "itmeLi"; //index에 있는 걸 class로 이름 부여
+        lists.appendChild(newLi);
+      });
+      var x = 0;
+      rightBtn.onclick = function () {
+        x += 80;
+        if (x >= 0) {
+          x = 0;
+          alert("처음 입니다!");
+        }
+        lists.style.left = x + "px";
+        console.log(x);
+      };
+      leftBtn.onclick = function () {
+        x -= 80;
+        if (x < -480) {
+          x = -480;
+          alert("마지막  입니다");
+        }
+        lists.style.left = x + "px";
+        console.log(x);
+      };
+    </script>
+  </body>
+</html>
