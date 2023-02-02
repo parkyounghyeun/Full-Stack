@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div#box {
+        border: 1px solid black;
+        position: relative;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        transition: all 0.3s;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="playBtn">Play</button>
+    <div id="box">box</div>
+
+    <script>
+      var playBtn = document.getElementById("playBtn");
+      var move = function () {
+        var box = document.querySelector("div#box");
+        var boxStyle = getComputedStyle(box);
+        var x = parseInt(boxStyle.left);
+        var y = boxStyle.top;
+        var w = boxStyle.width;
+        var h = boxStyle.height;
+        //console.log(box.offsetWidth);
+        //console.log(x, y, w, h);
+
+        var refInterval = setInterval(function () {
+          x += 10;
+          if (x >= 500) {
+            x = 500;
+            clearInterval(refInterval);
+          }
+          box.style.left = x + "px";
+        }, 1000 / 30);
+      };
+
+      playBtn.onclick = move;
+    </script>
+  </body>
+</html>

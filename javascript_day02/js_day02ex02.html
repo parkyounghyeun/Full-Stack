@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var count = 0;
+      //var는 범위가 함수 단위이다.
+      //함수안에서 var로 선언하면 함수의 멤버가 된다.
+      //함수안에서 var를 생략하면 window의 필드가 된다.
+      function addCount() {
+        //count = 0;
+        count = count + 1;
+      }
+      addCount();
+      addCount();
+      addCount();
+
+      console.log(count); //count is not defined
+    </script>
+  </body>
+</html>
