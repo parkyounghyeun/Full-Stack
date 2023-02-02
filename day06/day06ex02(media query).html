@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      /* 스마트폰 */
+      @media screen and (max-width: 760px) {
+        body {
+          background-color: red;
+        }
+      }
+      /* 태블릿 pc 세로 */
+      /*and는 A와B 사이*/
+      @media screen and (min-width: 767px) and (max-width: 900px) {
+        body {
+          background-color: blue;
+        }
+      }
+      /*데스크 탑 용*/
+      @media screen and (min-width: 960px) {
+        body {
+          background-color: yellow;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>풀스택</h1>
+      <div>
+        <p>
+          풀스택 개발자란 GUI 프론트엔드부터 데이터베이스 백엔드에 이르는 모든
+          소프트웨어 스택을 이해하는 개발자를 말한다. 풀스택 개발자는
+          데이터베이스, 서버, 시스템 엔지니어링
+        </p>
+        및 클라이언트의 모든 작업을 처리할 수 있는 엔지니어입니다.
+      </div>
+    </div>
+  </body>
+</html>
