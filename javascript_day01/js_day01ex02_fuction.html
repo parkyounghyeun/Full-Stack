@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function testFn01() {
+        console.log("testFn01()에서 this : " + this); //, 하면 안에 내용 알 수 있고 +하면 결과를 알려줌
+      }
+
+      //함수는 호출을 해야 실행 한다.
+      //testFn01(); //this는 window
+
+      //obj 자체는 window의 멤버이지만 안에 생성한objFn은 object이다.
+      var obj = {
+        name: "my object",
+        objFn: function () {
+          console.log("objFn에서 this : ", this);
+        },
+      };
+      //호출 방법 두 가지 가능
+      //obj.objFn();
+      //obj["objFn"]();
+
+      //window의 멤버 필드로 접근 가능
+      window["testFn01"]();
+      window["obj"]["objFn"]();
+    </script>
+  </body>
+</html>
