@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div#lottoArea div {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        border: 1px solid black;
+        border-radius: 50%;
+        text-align: center;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>로또 번호 생성기</h1>
+    <fieldset>
+      <legend>Lotto</legend>
+      <div id="lottoArea">
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+        <div>1</div>
+      </div>
+    </fieldset>
+    <script>
+      const colors = ["red", "green", "orange", "yellow", "skyblue", "pink"];
+      const ballList = document.querySelectorAll("#lottoArea > div");
+      ballList.forEach((item, idx) => {
+        item.style.backgroundColor = colors[idx];
+      });
+
+      //1~45까지의 중복 되지 않는 난수 6개 생성
+      const lotto = [];
+      for (i = 0; i < 6; i++) {
+        lottoNum = Math.floor(Math.random() * 45) + 1;
+        if (lotto.indexOf(lottoNum) === -1) {
+          lotto.push(lottoNum);
+        } else {
+          i--;
+        }
+        //중복을 피해야 하기 때문에,
+        //for문을 돌 때마다 지금 뽑은 숫자가 이미 lotto에
+        //들어 있는지 확인하고, 없으면 넣어주는 코드를 추가해야 한다.
+        //이미 뽑은 숫자일 경우, i를 1씩 감소시켜 다시 그 턴을 돌도록 코드를 추가했다.
+      }
+      console.log(lotto);
+      lotto.sort();
+      ballList.forEach((item, idx) => {
+        item.innerText = lotto[idx];
+      });
+    </script>
+  </body>
+</html>

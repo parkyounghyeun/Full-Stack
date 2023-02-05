@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var num; // 값을 안넣어서 이건 num은 undefined이다.
+      // if ~ else
+      // undefined null. NaN등은 false와 동일하다.
+      // if (!num) {
+      // document.write("true 입니다.");
+      // } else {
+      // document.write("false 입니다.");
+      // }
+
+      // prompt로 입력 받은 데이터의 타입은 string입니다.
+      // number형식으로 사용하기 위해 parseInt(), Number()로 형 변환 한다.
+      var age = parseInt(prompt("나이 입력: ")); // prompt는 팝업으로 사용자에게 데이터 입력 값을 받는 것이다.
+      document.write(`당신의 나이는 ${age}세입니다.`);
+      if (age > 19) {
+        var isAdult = "성인";
+        //alert("당신은 성인입니다.");
+      } else {
+        var isAdult = "미성인";
+        //alert("당신은 미성년자군요~");
+      }
+      document.write(`당신은 ${isAdult}입니다`);
+    </script>
+  </body>
+</html>

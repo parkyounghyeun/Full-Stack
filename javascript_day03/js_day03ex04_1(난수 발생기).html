@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>난수 발생기 (Random)</h1>
+
+    <div id="demo"></div>
+
+    <script>
+      let number = 1 + Math.floor(Math.random() * 100); //10,100,1000 곱하면 소수점 위치가 바뀐다. 2를 곱하면 2 이상 수는 안나온다.
+      //1부터 100까지라는 말
+      console.log(number);
+      //45~100사이만 사용
+      //앞에 +상수는 상수부터~ *상수는 +상수+*에 있는 숫자 라는 말 까지라는 말!~!
+      let number2 = Math.floor(Math.random() * 56) + 45; // 결과는 -1이 되기 때문 45~100사이 값 랜덤 생성 할려면 이렇게 해야함
+      console.log(number2);
+    </script>
+  </body>
+</html>
